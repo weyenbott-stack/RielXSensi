@@ -1,0 +1,4052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+
+<title>𝗥𝗶𝗲𝗹 𝗦𝗲𝗻𝘀𝗶 𝗫 — 𝙁𝙍𝙀𝙀 𝙁𝙄𝙍𝙀 Sensitivity</title>
+<meta name="description" content="Generate personalized 𝙁𝙍𝙀𝙀 𝙁𝙄𝙍𝙀 sensitivity settings for your device and playstyle."/>
+
+<meta name="theme-color" content="#07090d"/>
+<meta name="color-scheme" content="dark"/>
+
+<meta property="og:title" content="𝗥𝗶𝗲𝗹 𝗦𝗲𝗻𝘀𝗶 𝗫 — 𝙁𝙍𝙀𝙀 𝙁𝙄𝙍𝙀 Sensitivity"/>
+<meta property="og:description" content="Generate personalized sensitivity settings for your device and playstyle."/>
+<meta property="og:image" content="https://sensi.letdahyper.com/og.png"/>
+
+<link rel="shortcut icon" href="/favicon.svg"/>
+<link rel="icon" href="/favicon.svg"/>
+
+<style>
+
+/* =========================================================
+   𝗥𝗶𝗲𝗹 𝗦𝗲𝗻𝘀𝗶 𝗫
+   Premium Dark Futuristic UI
+   Standalone CSS — No Framework
+========================================================= */
+
+:root{
+  --bg:#050608;
+  --bg-2:#080a0f;
+  --bg-3:#0b0e14;
+
+  --panel:#0c1016;
+  --panel-2:#10151d;
+  --panel-3:#131923;
+
+  --line:rgba(255,255,255,.075);
+  --line-strong:rgba(255,255,255,.12);
+
+  --text:#f5f7fa;
+  --text-2:#aeb5c0;
+  --text-3:#69717d;
+
+  --orange:#ff5a1f;
+  --orange-2:#ff7543;
+  --orange-dark:#c83d0e;
+
+  --green:#37d995;
+  --blue:#66a3ff;
+
+  --radius:18px;
+  --radius-sm:12px;
+
+  --shadow:
+    0 30px 100px rgba(0,0,0,.45),
+    0 2px 8px rgba(0,0,0,.35);
+
+  --mono:
+    "SFMono-Regular",
+    "Roboto Mono",
+    Consolas,
+    monospace;
+
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  background:var(--bg);
+}
+
+body{
+  margin:0;
+  min-width:320px;
+  min-height:100vh;
+
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(255,90,31,.075),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(91,130,255,.035),
+      transparent 30%
+    ),
+    var(--bg);
+
+  color:var(--text);
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+button,
+input{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+button,
+a,
+input{
+  -webkit-tap-highlight-color:transparent;
+}
+
+img{
+  max-width:100%;
+}
+
+::selection{
+  background:rgba(255,90,31,.25);
+  color:#fff;
+}
+
+:focus-visible{
+  outline:2px solid var(--orange);
+  outline-offset:3px;
+}
+
+
+/* =========================================================
+   BACKGROUND SYSTEM
+========================================================= */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.018) 1px,
+      transparent 1px
+    );
+
+  background-size:64px 64px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 65%
+    );
+
+  opacity:.32;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:100;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,90,31,.018),
+      transparent 20%,
+      transparent 80%,
+      rgba(255,90,31,.018)
+    );
+
+  mix-blend-mode:screen;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main{
+  min-height:100vh;
+  position:relative;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar{
+  width:min(1180px,calc(100% - 40px));
+  height:76px;
+
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  position:relative;
+  z-index:20;
+}
+
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+
+  color:#fff;
+  text-decoration:none;
+
+  font-size:13px;
+  font-weight:950;
+  letter-spacing:.17em;
+}
+
+.brand-mark{
+  width:36px;
+  height:36px;
+
+  display:grid;
+  place-items:center;
+
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #171c24,
+      #090b0f
+    );
+
+  color:var(--orange);
+
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.05),
+    0 8px 30px rgba(0,0,0,.35);
+
+  font-size:14px;
+  letter-spacing:0;
+}
+
+.brand-accent{
+  color:var(--orange);
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  height:30px;
+  padding:0 11px;
+
+  border:1px solid rgba(255,90,31,.18);
+  border-radius:999px;
+
+  background:rgba(255,90,31,.045);
+
+  color:#ff9a77;
+
+  font-family:var(--mono);
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.14em;
+}
+
+.badge::before{
+  content:"";
+  width:5px;
+  height:5px;
+
+  border-radius:50%;
+  background:var(--orange);
+
+  box-shadow:
+    0 0 0 3px rgba(255,90,31,.08),
+    0 0 12px rgba(255,90,31,.5);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  width:min(1180px,calc(100% - 40px));
+  min-height:480px;
+
+  margin:auto;
+
+  padding:
+    95px
+    0
+    80px;
+
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero::before{
+  content:"01";
+
+  position:absolute;
+  right:4%;
+  top:20px;
+
+  color:rgba(255,255,255,.025);
+
+  font-family:var(--mono);
+  font-size:180px;
+  font-weight:900;
+
+  pointer-events:none;
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  margin-bottom:22px;
+
+  color:var(--text-3);
+
+  font-family:var(--mono);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.18em;
+}
+
+.eyebrow span{
+  width:6px;
+  height:6px;
+
+  border-radius:50%;
+
+  background:var(--orange);
+
+  box-shadow:
+    0 0 0 4px rgba(255,90,31,.07),
+    0 0 16px rgba(255,90,31,.45);
+}
+
+.hero h1{
+  margin:0;
+
+  max-width:780px;
+
+  position:relative;
+  z-index:2;
+
+  font-size:
+    clamp(
+      58px,
+      9vw,
+      112px
+    );
+
+  line-height:.88;
+
+  letter-spacing:-.075em;
+
+  font-weight:950;
+}
+
+.hero h1 em{
+  color:var(--orange);
+  font-style:normal;
+}
+
+.hero>p{
+  margin:28px 0 0;
+
+  max-width:430px;
+
+  color:var(--text-3);
+
+  font-size:14px;
+  line-height:1.7;
+
+  position:relative;
+  z-index:2;
+}
+
+.hero-stat{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  margin-top:35px;
+
+  position:relative;
+  z-index:2;
+}
+
+.hero-stat strong{
+  color:var(--text);
+
+  font-family:var(--mono);
+  font-size:22px;
+  font-weight:900;
+}
+
+.hero-stat strong::before{
+  content:"~";
+  color:var(--orange);
+  margin-right:2px;
+}
+
+.hero-stat span{
+  padding-left:12px;
+
+  border-left:1px solid var(--line);
+
+  color:var(--text-3);
+
+  font-family:var(--mono);
+  font-size:8px;
+  line-height:1.55;
+
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.hero-mascot-wrap{
+  position:absolute;
+
+  right:0;
+  bottom:-35px;
+
+  width:min(380px,35vw);
+
+  opacity:.9;
+
+  pointer-events:none;
+
+  filter:
+    drop-shadow(
+      0 35px 50px rgba(0,0,0,.65)
+    );
+
+  z-index:1;
+}
+
+.hero-mascot{
+  display:block;
+}
+
+
+/* =========================================================
+   GENERATOR SHELL
+========================================================= */
+
+.generator{
+  width:min(780px,calc(100% - 40px));
+
+  margin:10px auto 0;
+
+  padding:42px;
+
+  position:relative;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.025),
+      rgba(255,255,255,.008)
+    ),
+    var(--panel);
+
+  border:
+    1px solid var(--line);
+
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow);
+
+  overflow:hidden;
+}
+
+.generator::before{
+  content:"";
+
+  position:absolute;
+  left:0;
+  top:0;
+
+  width:100%;
+  height:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,90,31,.7),
+      transparent
+    );
+}
+
+.generator::after{
+  content:"";
+
+  position:absolute;
+  width:240px;
+  height:240px;
+
+  right:-160px;
+  top:-170px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,90,31,.09),
+      transparent 68%
+    );
+
+  pointer-events:none;
+}
+
+
+/* =========================================================
+   GUIDE MASCOT
+========================================================= */
+
+.guide-mascot{
+  position:absolute;
+
+  top:28px;
+  right:34px;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  opacity:.72;
+}
+
+.guide-mascot img{
+  width:58px;
+  max-height:76px;
+
+  object-fit:contain;
+}
+
+.guide-mascot span{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+
+.guide-mascot b{
+  color:var(--orange);
+
+  font-family:var(--mono);
+  font-size:7px;
+  letter-spacing:.12em;
+}
+
+.guide-mascot small{
+  color:var(--text-3);
+
+  font-family:var(--mono);
+  font-size:8px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+
+  margin-bottom:24px;
+}
+
+.step{
+  min-width:30px;
+
+  padding-top:4px;
+
+  color:var(--orange);
+
+  font-family:var(--mono);
+  font-size:9px;
+  font-weight:900;
+
+  letter-spacing:.05em;
+}
+
+.section-heading h2{
+  margin:0;
+
+  color:var(--text);
+
+  font-size:23px;
+  line-height:1.15;
+  letter-spacing:-.035em;
+}
+
+.section-heading p{
+  margin:6px 0 0;
+
+  color:var(--text-3);
+
+  font-family:var(--mono);
+  font-size:9px;
+
+  letter-spacing:.02em;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.generator>label{
+  display:block;
+
+  margin:
+    0
+    0
+    10px
+    44px;
+
+  color:var(--text-3);
+
+  font-family:var(--mono);
+  font-size:8px;
+  font-weight:900;
+
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   BRAND GRID
+========================================================= */
+
+.brand-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap:8px;
+
+  margin-bottom:24px;
+}
+
+.brand-grid button{
+  min-height:62px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.018),
+      rgba(255,255,255,.005)
+    );
+
+  color:var(--text-2);
+
+  font-size:10px;
+  font-weight:750;
+
+  transition:
+    transform .2s var(--ease),
+    border-color .2s ease,
+    background .2s ease,
+    color .2s ease,
+    box-shadow .2s ease;
+}
+
+.brand-grid button span{
+  width:27px;
+  height:27px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:8px;
+
+  background:#171c24;
+
+  color:#68717d;
+
+  font-family:var(--mono);
+  font-size:7px;
+  font-weight:900;
+}
+
+.brand-grid button:hover{
+  transform:translateY(-2px);
+
+  border-color:
+    rgba(255,90,31,.25);
+
+  background:#11161e;
+
+  color:#fff;
+}
+
+.brand-grid button.selected{
+  border-color:
+    rgba(255,90,31,.55);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,90,31,.09),
+      rgba(255,90,31,.025)
+    );
+
+  color:#fff;
+
+  box-shadow:
+    inset 0 0 30px rgba(255,90,31,.025),
+    0 8px 28px rgba(0,0,0,.25);
+}
+
+.brand-grid button.selected span{
+  background:var(--orange);
+  color:#fff;
+
+  box-shadow:
+    0 0 0 3px rgba(255,90,31,.08);
+}
+
+
+/* =========================================================
+   MODEL INPUT
+========================================================= */
+
+#model{
+  width:100%;
+  height:56px;
+
+  padding:0 16px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:12px;
+
+  outline:none;
+
+  background:#090c11;
+
+  color:#fff;
+
+  font-size:12px;
+
+  transition:
+    border-color .2s ease,
+    background .2s ease,
+    box-shadow .2s ease;
+}
+
+#model::placeholder{
+  color:#4d5662;
+}
+
+#model:hover{
+  border-color:var(--line-strong);
+}
+
+#model:focus{
+  border-color:
+    rgba(255,90,31,.55);
+
+  background:#0b0f15;
+
+  box-shadow:
+    0 0 0 3px rgba(255,90,31,.06);
+}
+
+#model.invalid{
+  border-color:#ff4848;
+
+  animation:
+    inputShake .3s ease;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.divider{
+  height:1px;
+
+  margin:
+    38px
+    0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--line),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   PRESET LIST
+========================================================= */
+
+.preset-list{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.preset{
+  width:100%;
+  min-height:68px;
+
+  padding:12px 15px;
+
+  display:flex;
+  align-items:center;
+  gap:13px;
+
+  text-align:left;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:12px;
+
+  background:#090c11;
+
+  color:#fff;
+
+  transition:
+    transform .2s var(--ease),
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.preset:hover{
+  transform:translateX(2px);
+
+  border-color:
+    rgba(255,255,255,.13);
+
+  background:#0d1118;
+}
+
+.preset.selected{
+  border-color:
+    rgba(255,90,31,.55);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,90,31,.075),
+      rgba(255,90,31,.018)
+    );
+}
+
+.radio{
+  width:18px;
+  height:18px;
+
+  flex:0 0 auto;
+
+  position:relative;
+
+  border:
+    1px solid #414a55;
+
+  border-radius:50%;
+}
+
+.preset.selected .radio{
+  border-color:var(--orange);
+}
+
+.preset.selected .radio::after{
+  content:"";
+
+  position:absolute;
+
+  inset:4px;
+
+  border-radius:50%;
+
+  background:var(--orange);
+
+  box-shadow:
+    0 0 10px rgba(255,90,31,.5);
+}
+
+.preset>span:nth-child(2){
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.preset strong{
+  font-size:12px;
+}
+
+.preset small{
+  color:var(--text-3);
+  font-size:9px;
+}
+
+.preset>b{
+  margin-left:auto;
+
+  color:var(--orange);
+
+  font-family:var(--mono);
+  font-size:7px;
+  letter-spacing:.12em;
+}
+
+
+/* =========================================================
+   DPI ROW
+========================================================= */
+
+.dpi-row{
+  width:100%;
+
+  margin-top:10px;
+  padding:16px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  text-align:left;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:12px;
+
+  background:#090c11;
+
+  color:#fff;
+
+  transition:
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.dpi-row:hover{
+  border-color:var(--line-strong);
+  background:#0d1118;
+}
+
+.dpi-row>span{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.dpi-row strong{
+  font-size:11px;
+}
+
+.dpi-row small{
+  color:var(--text-3);
+  font-family:var(--mono);
+  font-size:8px;
+}
+
+.toggle{
+  width:42px;
+  height:23px;
+
+  padding:3px;
+
+  display:block;
+
+  border-radius:999px;
+
+  background:#292f38;
+
+  transition:
+    background .25s var(--ease);
+}
+
+.toggle u{
+  width:17px;
+  height:17px;
+
+  display:block;
+
+  border-radius:50%;
+
+  background:#fff;
+
+  text-decoration:none;
+
+  box-shadow:0 2px 5px rgba(0,0,0,.25);
+
+  transition:
+    transform .25s var(--ease);
+}
+
+.toggle.on{
+  background:var(--orange);
+}
+
+.toggle.on u{
+  transform:translateX(19px);
+}
+
+
+/* =========================================================
+   GENERATE BUTTON
+========================================================= */
+
+.generate{
+  width:100%;
+  min-height:60px;
+
+  margin-top:16px;
+
+  position:relative;
+
+  border:0;
+  border-radius:12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff6b32,
+      #e94710
+    );
+
+  color:#fff;
+
+  font-size:10px;
+  font-weight:950;
+
+  letter-spacing:.1em;
+
+  box-shadow:
+    0 12px 35px rgba(255,90,31,.13);
+
+  overflow:hidden;
+
+  transition:
+    transform .2s var(--ease),
+    box-shadow .2s ease,
+    filter .2s ease;
+}
+
+.generate::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent 25%,
+      rgba(255,255,255,.18) 50%,
+      transparent 75%
+    );
+
+  transform:translateX(-120%);
+}
+
+.generate:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 18px 45px rgba(255,90,31,.22);
+
+  filter:saturate(1.08);
+}
+
+.generate:hover::before{
+  animation:buttonShine .8s ease;
+}
+
+.generate:active{
+  transform:translateY(0);
+}
+
+.generate.loading{
+  opacity:.72;
+  pointer-events:none;
+}
+
+.generate span{
+  margin-left:8px;
+  font-size:15px;
+}
+
+.microcopy{
+  margin:12px 0 0;
+
+  color:#515a66;
+
+  font-family:var(--mono);
+  font-size:7px;
+
+  line-height:1.6;
+
+  text-align:center;
+}
+
+
+/* =========================================================
+   RESULT CARD
+========================================================= */
+
+.sensi-result{
+  margin-top:18px;
+
+  padding:22px;
+
+  position:relative;
+
+  border:
+    1px solid rgba(255,90,31,.22);
+
+  border-radius:14px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(255,90,31,.08),
+      transparent 42%
+    ),
+    #090c11;
+
+  animation:
+    resultReveal .45s var(--ease) both;
+}
+
+.sensi-result::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:18px;
+
+  width:2px;
+  height:42px;
+
+  border-radius:2px;
+
+  background:var(--orange);
+}
+
+.result-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:15px;
+
+  padding-bottom:16px;
+
+  border-bottom:
+    1px solid var(--line);
+}
+
+.result-header h3{
+  margin:0;
+
+  font-size:15px;
+  letter-spacing:-.02em;
+}
+
+.result-header p{
+  margin:5px 0 0;
+
+  color:var(--text-3);
+
+  font-family:var(--mono);
+  font-size:8px;
+}
+
+.result-status{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+
+  color:var(--green);
+
+  font-family:var(--mono);
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:.1em;
+}
+
+.sensi-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap:7px;
+
+  margin-top:16px;
+}
+
+.sensi-value{
+  min-height:83px;
+
+  padding:13px 8px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  border:
+    1px solid rgba(255,255,255,.055);
+
+  border-radius:9px;
+
+  background:#07090d;
+
+  position:relative;
+  overflow:hidden;
+}
+
+.sensi-value::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:0;
+
+  height:1px;
+  width:var(--level,70%);
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--orange),
+      transparent
+    );
+
+  opacity:.65;
+}
+
+.sensi-value small{
+  margin-bottom:5px;
+
+  color:#5e6773;
+
+  font-family:var(--mono);
+  font-size:7px;
+
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.sensi-value strong{
+  color:#fff;
+
+  font-family:var(--mono);
+  font-size:23px;
+  font-weight:900;
+
+  letter-spacing:-.04em;
+}
+
+.result-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:8px;
+
+  margin-top:12px;
+}
+
+.result-actions button{
+  min-height:40px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:9px;
+
+  background:#10151c;
+
+  color:var(--text-2);
+
+  font-family:var(--mono);
+  font-size:7px;
+  font-weight:900;
+
+  letter-spacing:.08em;
+
+  transition:
+    border-color .2s ease,
+    color .2s ease,
+    background .2s ease;
+}
+
+.result-actions button:hover{
+  border-color:
+    rgba(255,90,31,.45);
+
+  background:#151a22;
+
+  color:#fff;
+}
+
+
+/* =========================================================
+   TECHNICAL SUMMARY
+========================================================= */
+
+.result-meta{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:7px;
+
+  margin-top:7px;
+}
+
+.meta-box{
+  padding:10px;
+
+  border:
+    1px solid rgba(255,255,255,.045);
+
+  border-radius:8px;
+
+  background:#07090d;
+}
+
+.meta-box span{
+  display:block;
+
+  color:#505965;
+
+  font-family:var(--mono);
+  font-size:6px;
+
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.meta-box strong{
+  display:block;
+
+  margin-top:4px;
+
+  color:#aeb7c3;
+
+  font-family:var(--mono);
+  font-size:9px;
+}
+
+
+/* =========================================================
+   NEW: EXTRA RESULT INFO (TIPS & DETAILS)
+========================================================= */
+
+.result-extras{
+  margin-top:12px;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+.extra-box{
+  padding:12px;
+
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:10px;
+  background:#07090d;
+}
+
+.extra-box .extra-title{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom:8px;
+
+  color:var(--orange);
+  font-family:var(--mono);
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:.1em;
+}
+
+.extra-box .extra-title::before{
+  content:"◆";
+  font-size:6px;
+  color:var(--orange);
+}
+
+.extra-box p{
+  margin:0;
+  color:var(--text-2);
+  font-family:var(--mono);
+  font-size:8px;
+  line-height:1.6;
+}
+
+.result-tips{
+  margin-top:12px;
+  padding:14px;
+
+  border:1px solid rgba(255,90,31,.15);
+  border-radius:10px;
+  background:rgba(255,90,31,.03);
+}
+
+.result-tips .tip-title{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom:6px;
+
+  color:var(--orange);
+  font-family:var(--mono);
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:.1em;
+}
+
+.result-tips .tip-title::before{
+  content:"⚡";
+  font-size:8px;
+}
+
+.result-tips p{
+  margin:0;
+  color:#cbd2dc;
+  font-family:var(--mono);
+  font-size:8px;
+  line-height:1.6;
+}
+
+
+/* =========================================================
+   NEW: GENERATING OVERLAY (ANIMASI PROSES)
+========================================================= */
+
+.generating-overlay{
+  position:absolute;
+  inset:0;
+  z-index:50;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(5,6,8,.96);
+  backdrop-filter:blur(14px);
+
+  border-radius:inherit;
+
+  opacity:0;
+  pointer-events:none;
+
+  transition:opacity .3s ease;
+}
+
+.generating-overlay.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.gen-content{
+  width:min(420px,calc(100% - 40px));
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.gen-mascot{
+  width:56px;
+  height:56px;
+  margin-bottom:16px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:14px;
+  background:rgba(255,90,31,.06);
+  border:1px solid rgba(255,90,31,.15);
+
+  font-size:24px;
+  color:var(--orange);
+
+  animation:pulseMascot 1.6s ease-in-out infinite;
+}
+
+.gen-title{
+  color:#fff;
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:-.02em;
+}
+
+.gen-sub{
+  color:var(--text-3);
+  font-family:var(--mono);
+  font-size:8px;
+  letter-spacing:.08em;
+  margin-top:6px;
+}
+
+.progress-track{
+  width:100%;
+  height:6px;
+  margin:20px 0 12px;
+
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  border-radius:inherit;
+
+  background:linear-gradient(90deg,var(--orange),var(--orange-2));
+  box-shadow:0 0 12px rgba(255,90,31,.5);
+
+  transition:width .45s var(--ease);
+}
+
+.gen-steps{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-top:6px;
+}
+
+.gen-step{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  color:var(--text-3);
+  font-family:var(--mono);
+  font-size:8px;
+
+  transition:color .25s ease;
+}
+
+.gen-step .step-dot{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--text-3);
+  transition:background .25s ease;
+}
+
+.gen-step.active{
+  color:#fff;
+}
+
+.gen-step.active .step-dot{
+  background:var(--orange);
+  box-shadow:0 0 8px rgba(255,90,31,.6);
+}
+
+.gen-step.done{
+  color:#37d995;
+}
+
+.gen-step.done .step-dot{
+  background:var(--green);
+}
+
+.gen-scan{
+  position:absolute;
+  left:0;
+  right:0;
+  height:1px;
+
+  background:linear-gradient(90deg,transparent,rgba(255,90,31,.8),transparent);
+
+  animation:scanY 3s linear infinite;
+
+  opacity:.5;
+}
+
+.gen-grid-bg{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+
+  background-size:40px 40px;
+  mask-image:radial-gradient(circle at center,black,transparent 70%);
+  opacity:.4;
+}
+
+@keyframes pulseMascot{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.12); }
+}
+
+@keyframes scanY{
+  0%{ top:0; opacity:.2; }
+  50%{ opacity:.8; }
+  100%{ top:100%; opacity:.2; }
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+  position:fixed;
+
+  left:50%;
+  bottom:24px;
+
+  z-index:9999;
+
+  max-width:
+    calc(100% - 32px);
+
+  padding:
+    11px
+    15px;
+
+  border:
+    1px solid rgba(255,90,31,.25);
+
+  border-radius:10px;
+
+  background:
+    rgba(13,16,22,.94);
+
+  color:#fff;
+
+  font-family:var(--mono);
+  font-size:8px;
+
+  box-shadow:
+    0 15px 50px rgba(0,0,0,.5);
+
+  transform:
+    translate(-50%,20px);
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:
+    opacity .25s ease,
+    transform .25s var(--ease);
+
+  backdrop-filter:blur(15px);
+}
+
+.toast.show{
+  transform:
+    translate(-50%,0);
+
+  opacity:1;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  width:min(780px,calc(100% - 40px));
+
+  margin:auto;
+
+  padding:
+    48px
+    0
+    55px;
+
+  text-align:center;
+}
+
+footer>span{
+  color:#fff;
+
+  font-family:var(--mono);
+  font-size:9px;
+  font-weight:950;
+
+  letter-spacing:.2em;
+}
+
+footer>span span{
+  color:var(--orange);
+}
+
+footer p{
+  margin:9px 0 0;
+
+  color:#464e59;
+
+  font-family:var(--mono);
+  font-size:7px;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal{
+  opacity:0;
+
+  transform:translateY(16px);
+
+  transition:
+    opacity .65s var(--ease),
+    transform .65s var(--ease);
+}
+
+.reveal.visible{
+  opacity:1;
+
+  transform:translateY(0);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes buttonShine{
+  from{
+    transform:translateX(-120%);
+  }
+
+  to{
+    transform:translateX(120%);
+  }
+}
+
+@keyframes resultReveal{
+  from{
+    opacity:0;
+    transform:translateY(12px) scale(.99);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+@keyframes inputShake{
+  25%{
+    transform:translateX(-4px);
+  }
+
+  50%{
+    transform:translateX(4px);
+  }
+
+  75%{
+    transform:translateX(-2px);
+  }
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:800px){
+
+  .hero{
+    min-height:520px;
+
+    padding-top:80px;
+  }
+
+  .hero-mascot-wrap{
+    width:330px;
+    right:-40px;
+    bottom:-20px;
+    opacity:.6;
+  }
+
+  .generator{
+    padding:34px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+  .topbar{
+    width:calc(100% - 28px);
+    height:66px;
+  }
+
+  .brand{
+    font-size:11px;
+    letter-spacing:.13em;
+  }
+
+  .brand-mark{
+    width:32px;
+    height:32px;
+  }
+
+  .badge{
+    height:27px;
+    font-size:7px;
+  }
+
+  .hero{
+    width:calc(100% - 28px);
+
+    min-height:520px;
+
+    padding:
+      70px
+      0
+      50px;
+  }
+
+  .hero::before{
+    font-size:100px;
+    top:50px;
+  }
+
+  .hero h1{
+    font-size:
+      clamp(
+        53px,
+        16vw,
+        78px
+      );
+  }
+
+  .hero>p{
+    max-width:290px;
+    font-size:12px;
+  }
+
+  .hero-mascot-wrap{
+    width:290px;
+    right:-70px;
+    bottom:0;
+    opacity:.38;
+  }
+
+  .generator{
+    width:calc(100% - 28px);
+
+    padding:
+      28px
+      17px;
+
+    border-radius:15px;
+  }
+
+  .guide-mascot{
+    display:none;
+  }
+
+  .generator>label{
+    margin-left:44px;
+  }
+
+  .section-heading h2{
+    font-size:20px;
+  }
+
+  .brand-grid{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+  .brand-grid button{
+    min-height:58px;
+  }
+
+  .preset{
+    min-height:64px;
+  }
+
+  .sensi-grid{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+  .result-meta{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+  .result-meta .meta-box:last-child{
+    grid-column:span 2;
+  }
+
+  .result-extras{
+    grid-template-columns:1fr;
+  }
+
+  footer{
+    width:calc(100% - 28px);
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media(max-width:390px){
+
+  .hero h1{
+    font-size:51px;
+  }
+
+  .generator{
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  .brand-grid{
+    gap:6px;
+  }
+
+  .brand-grid button{
+    font-size:9px;
+  }
+
+  .sensi-value strong{
+    font-size:20px;
+  }
+
+  .result-actions{
+    grid-template-columns:1fr;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.001ms!important;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<main>
+
+<!-- =======================================================
+     TOPBAR
+======================================================= -->
+
+<header class="topbar">
+
+  <a
+    class="brand"
+    href="#top"
+    aria-label="𝗥𝗶𝗲𝗹 𝗦𝗲𝗻𝘀𝗶 𝗫, home"
+  >
+
+    <span class="brand-mark">L</span>
+
+    <span>
+      𝗥𝗶𝗲𝗹<span class="brand-accent">𝗦𝗲𝗻𝘀𝗶 𝗫</span>
+    </span>
+
+  </a>
+
+  <span class="badge">
+    𝙁𝙍𝙀𝙀 𝙁𝙄𝙍𝙀
+  </span>
+
+</header>
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section
+  class="hero reveal"
+  id="top"
+>
+
+  <div class="eyebrow">
+    <span></span>
+    PERSONALIZED SETTINGS
+  </div>
+
+  <h1>
+    Your aim.<br/>
+    <em>On point.</em>
+  </h1>
+
+  <p>
+𝙎𝙚𝙣𝙨𝙞𝙩𝙞𝙫𝙞𝙩𝙖𝙨 𝙔𝙖𝙣𝙜 𝙏𝙚𝙧𝙘𝙞𝙥𝙩𝙖 𝙙𝙖𝙧𝙞 𝙠𝙚𝙗𝙞𝙖𝙨𝙖𝙖𝙣📈
+𝙂𝙚𝙣𝙚𝙧𝙖𝙩𝙚 𝙥𝙧𝙤𝙛𝙞𝙡 𝙙𝙧𝙖𝙜-𝙨𝙩𝙮𝙡𝙚 𝙤𝙩𝙤𝙢𝙖𝙩𝙞𝙨
+𝙈𝙖𝙞𝙣 𝙢𝙖𝙠𝙞𝙣 𝙡𝙞𝙣𝙘𝙖𝙝 , 𝙗𝙞𝙙𝙞𝙠 𝙢𝙖𝙠𝙞𝙣 𝙣𝙚𝙢𝙥𝙚𝙡.
+𝘼𝙪𝙩𝙤 𝘽𝙤𝙮𝙖𝙖𝙝🚀
+  </p>
+
+  <div class="hero-stat">
+
+    <strong>Support Device 60Hz 90Hz 120Hz 144Hz🚀</strong>
+
+    <span>
+      to generate<br/>
+      your settings
+    </span>
+
+  </div>
+
+  <div
+    class="hero-mascot-wrap"
+    aria-hidden="true"
+  >
+    <img
+      src="/mascot-confident.png"
+      alt=""
+      class="hero-mascot"
+    />
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     GENERATOR
+======================================================= -->
+
+<section
+  class="generator reveal"
+  aria-labelledby="generator-title"
+>
+
+  <div
+    class="guide-mascot"
+    aria-hidden="true"
+  >
+
+    <img
+      src="/mascot-curious.png"
+      alt=""
+    />
+
+    <span>
+      <b>LET'S TUNE IT</b>
+      <small>Device first</small>
+    </span>
+
+  </div>
+
+
+  <!-- DEVICE -->
+
+  <div class="section-heading">
+
+    <span class="step">
+      01
+    </span>
+
+    <div>
+
+      <h2 id="generator-title">
+        Your device
+      </h2>
+
+      <p>
+        Tell us what you play on
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <label for="brand">
+    Brand
+  </label>
+
+
+  <div
+    class="brand-grid"
+    id="brand"
+    role="group"
+    aria-label="Choose your device brand"
+  >
+
+    <button
+      type="button"
+      class="selected"
+      data-brand="Samsung"
+    >
+      <span>SA</span>
+      Samsung
+    </button>
+
+    <button
+      type="button"
+      data-brand="Xiaomi"
+    >
+      <span>XI</span>
+      Xiaomi
+    </button>
+
+    <button
+      type="button"
+      data-brand="Motorola"
+    >
+      <span>MO</span>
+      Motorola
+    </button>
+
+    <button
+      type="button"
+      data-brand="Apple"
+    >
+      <span>AP</span>
+      Apple
+    </button>
+
+    <button
+      type="button"
+      data-brand="Realme"
+    >
+      <span>RE</span>
+      Realme
+    </button>
+
+    <button
+      type="button"
+      data-brand="Other"
+    >
+      <span>OT</span>
+      Other
+    </button>
+
+  </div>
+
+
+  <label for="model">
+    Model
+  </label>
+
+  <input
+    id="model"
+    name="model"
+    placeholder="Ex: Galaxy A54"
+    autocomplete="off"
+    maxlength="80"
+    spellcheck="false"
+    inputmode="text"
+  />
+
+
+  <div class="divider"></div>
+
+
+  <!-- PLAY STYLE -->
+
+  <div class="section-heading">
+
+    <span class="step">
+      02
+    </span>
+
+    <div>
+
+      <h2>
+        Your style
+      </h2>
+
+      <p>
+        How do you like to drag for headshots?
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="preset-list"
+    role="radiogroup"
+    aria-label="Sensitivity style"
+  >
+
+    <button
+      type="button"
+      class="preset"
+      data-style="Control"
+      role="radio"
+      aria-checked="false"
+    >
+
+      <span class="radio"></span>
+
+      <span>
+        <strong>Control</strong>
+        <small>More stability</small>
+      </span>
+
+    </button>
+
+
+    <button
+      type="button"
+      class="preset selected"
+      data-style="Balanced"
+      role="radio"
+      aria-checked="true"
+    >
+
+      <span class="radio"></span>
+
+      <span>
+        <strong>Balanced</strong>
+        <small>Accuracy + speed</small>
+      </span>
+
+      <b>
+        RECOMMENDED
+      </b>
+
+    </button>
+
+
+    <button
+      type="button"
+      class="preset"
+      data-style="Aggressive"
+      role="radio"
+      aria-checked="false"
+    >
+
+      <span class="radio"></span>
+
+      <span>
+        <strong>Aggressive</strong>
+        <small>Fast drag headshots</small>
+      </span>
+
+    </button>
+
+  </div>
+
+
+  <!-- DPI -->
+
+  <button
+    type="button"
+    class="dpi-row"
+    aria-pressed="true"
+  >
+
+    <span>
+
+      <strong>
+        Include DPI
+      </strong>
+
+      <small>
+        Extra precision adjustment
+      </small>
+
+    </span>
+
+    <i class="toggle on">
+      <u></u>
+    </i>
+
+  </button>
+
+
+  <!-- GENERATE -->
+
+  <button
+    type="button"
+    class="generate"
+  >
+    GENERATE MY SENSI
+    <span>↗</span>
+  </button>
+
+
+  <p class="microcopy">
+    Use these settings as a starting point.
+    Fine-tune them in the training ground.
+  </p>
+
+
+  <!-- =======================================================
+       GENERATING OVERLAY (ANIMASI PROSES)
+       Ditambahkan untuk pengalaman generate seperti ChatGPT
+  ======================================================== -->
+
+  <div class="generating-overlay" id="generatingOverlay">
+    <div class="gen-grid-bg"></div>
+    <div class="gen-scan"></div>
+
+    <div class="gen-content">
+      <div class="gen-mascot">
+        ⚙
+      </div>
+      <div class="gen-title">
+        Menganalisis Perangkat
+      </div>
+      <div class="gen-sub">
+        Menyesuaikan sensitivitas terbaik untukmu
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="gen-steps" id="genSteps">
+        <div class="gen-step" data-step="0">
+          <span class="step-dot"></span>
+          Deteksi model perangkat...
+        </div>
+        <div class="gen-step" data-step="1">
+          <span class="step-dot"></span>
+          Analisis refresh rate layar...
+        </div>
+        <div class="gen-step" data-step="2">
+          <span class="step-dot"></span>
+          Klasifikasi kelas device...
+        </div>
+        <div class="gen-step" data-step="3">
+          <span class="step-dot"></span>
+          Tuning sensitivitas & DPI...
+        </div>
+        <div class="gen-step" data-step="4">
+          <span class="step-dot"></span>
+          Optimasi drag response...
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+  <span>
+    𝗥𝗶𝗲𝗹<span>𝗦𝗲𝗻𝘀𝗶 𝗫</span>
+  </span>
+
+  <p>
+    Precision starts with the right settings.
+  </p>
+
+</footer>
+
+
+</main>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     Standalone / No Framework
+     Rombak khusus pada bagian generate
+========================================================= -->
+
+<script>
+
+(() => {
+
+  "use strict";
+
+
+  /* =======================================================
+     2026 BASE PROFILES — 0 TO 200
+  ======================================================= */
+
+  const BASE_PROFILES = {
+
+    Control: {
+      General: 180,
+      "Red Dot": 170,
+      "2X Scope": 155,
+      "4X Scope": 135,
+      "Sniper Scope": 88,
+      "Free Look": 112
+    },
+
+    Balanced: {
+      General: 185,
+      "Red Dot": 175,
+      "2X Scope": 160,
+      "4X Scope": 140,
+      "Sniper Scope": 90,
+      "Free Look": 120
+    },
+
+    Aggressive: {
+      General: 195,
+      "Red Dot": 185,
+      "2X Scope": 170,
+      "4X Scope": 150,
+      "Sniper Scope": 95,
+      "Free Look": 128
+    }
+
+  };
+
+
+  /* =======================================================
+     DEVICE PROFILES — Brand + Offset
+  ======================================================= */
+
+  const DEVICE_PROFILES = {
+
+    Samsung: {
+      General: -2,
+      "Red Dot": -1,
+      "2X Scope": 0,
+      "4X Scope": 0,
+      "Sniper Scope": 0,
+      "Free Look": 0,
+      dpi: 411,
+      defaultHz: 90
+    },
+
+    Xiaomi: {
+      General: 2,
+      "Red Dot": 2,
+      "2X Scope": 1,
+      "4X Scope": 1,
+      "Sniper Scope": 0,
+      "Free Look": 2,
+      dpi: 420,
+      defaultHz: 120
+    },
+
+    Motorola: {
+      General: 0,
+      "Red Dot": 0,
+      "2X Scope": 0,
+      "4X Scope": 0,
+      "Sniper Scope": 0,
+      "Free Look": 0,
+      dpi: 400,
+      defaultHz: 90
+    },
+
+    Apple: {
+      General: -4,
+      "Red Dot": -3,
+      "2X Scope": -2,
+      "4X Scope": -2,
+      "Sniper Scope": -2,
+      "Free Look": -2,
+      dpi: null,
+      defaultHz: 120
+    },
+
+    Realme: {
+      General: 2,
+      "Red Dot": 2,
+      "2X Scope": 1,
+      "4X Scope": 1,
+      "Sniper Scope": 0,
+      "Free Look": 1,
+      dpi: 420,
+      defaultHz: 120
+    },
+
+    Other: {
+      General: 0,
+      "Red Dot": 0,
+      "2X Scope": 0,
+      "4X Scope": 0,
+      "Sniper Scope": 0,
+      "Free Look": 0,
+      dpi: 411,
+      defaultHz: 60
+    }
+
+  };
+
+
+  /* =======================================================
+     DEVICE CLASSIFICATION BY MODEL KEYWORDS
+  ======================================================= */
+
+  const DEVICE_CLASS = {
+
+    flagship: {
+      keywords: [
+        "s23", "s24", "s25", "s22",
+        "note 20", "note 10",
+        "fold", "flip",
+        "iphone 13", "iphone 14", "iphone 15", "iphone 16",
+        "poco f5", "poco f6", "poco x6 pro",
+        "mi 13", "mi 14", "xiaomi 14",
+        "realme gt", "edge 50", "edge 40"
+      ],
+      hz: 144,
+      dpi: 480,
+      touchResponse: "Sangat cepat (touch sampling tinggi)"
+    },
+
+    high: {
+      keywords: [
+        "a54", "a55", "a53", "a52",
+        "m53", "m52",
+        "redmi note 13", "redmi note 12", "redmi note 11",
+        "poco x4", "poco x5",
+        "realme 11", "realme 12",
+        "edge 30", "g84", "g85"
+      ],
+      hz: 120,
+      dpi: 440,
+      touchResponse: "Cepat dan stabil"
+    },
+
+    mid: {
+      keywords: [
+        "a34", "a35", "a33", "a32",
+        "m33", "m32",
+        "redmi 12", "redmi 13",
+        "realme 10", "realme 9",
+        "g73", "g72", "g54"
+      ],
+      hz: 90,
+      dpi: 411,
+      touchResponse: "Cukup responsif"
+    },
+
+    low: {
+      keywords: [
+        "a04", "a05", "a03",
+        "m04", "m05",
+        "redmi a1", "redmi a2", "redmi a3",
+        "realme c", "narzo",
+        "e22", "e32", "g14", "g24"
+      ],
+      hz: 60,
+      dpi: 360,
+      touchResponse: "Standar, gunakan kontrol lebih presisi"
+    }
+
+  };
+
+
+  /* =======================================================
+     STATE
+  ======================================================= */
+
+  let selectedBrand = "Samsung";
+
+  let selectedStyle = "Balanced";
+
+  let includeDpi = true;
+
+
+  /* =======================================================
+     DOM
+  ======================================================= */
+
+  const brandButtons =
+    document.querySelectorAll(
+      ".brand-grid button"
+    );
+
+  const presetButtons =
+    document.querySelectorAll(
+      ".preset"
+    );
+
+  const modelInput =
+    document.getElementById("model");
+
+  const dpiButton =
+    document.querySelector(".dpi-row");
+
+  const toggle =
+    document.querySelector(".toggle");
+
+  const generateButton =
+    document.querySelector(".generate");
+
+  const generator =
+    document.querySelector(".generator");
+
+  const generatingOverlay =
+    document.getElementById("generatingOverlay");
+
+  const progressFill =
+    document.getElementById("progressFill");
+
+  const genSteps =
+    document.getElementById("genSteps");
+
+
+  /* =======================================================
+     BRAND SELECTOR
+  ======================================================= */
+
+  brandButtons.forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        brandButtons.forEach(item => {
+
+          item.classList.remove(
+            "selected"
+          );
+
+        });
+
+        button.classList.add(
+          "selected"
+        );
+
+        selectedBrand =
+          button.dataset.brand;
+
+        modelInput.classList.remove(
+          "invalid"
+        );
+
+        showToast(
+          `${selectedBrand} profile selected`
+        );
+
+      }
+    );
+
+  });
+
+
+  /* =======================================================
+     STYLE SELECTOR
+  ======================================================= */
+
+  presetButtons.forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        presetButtons.forEach(item => {
+
+          item.classList.remove(
+            "selected"
+          );
+
+          item.setAttribute(
+            "aria-checked",
+            "false"
+          );
+
+        });
+
+        button.classList.add(
+          "selected"
+        );
+
+        button.setAttribute(
+          "aria-checked",
+          "true"
+        );
+
+        selectedStyle =
+          button.dataset.style;
+
+        showToast(
+          `${selectedStyle} profile selected`
+        );
+
+      }
+    );
+
+  });
+
+
+  /* =======================================================
+     DPI
+  ======================================================= */
+
+  dpiButton.addEventListener(
+    "click",
+    () => {
+
+      includeDpi =
+        !includeDpi;
+
+      dpiButton.setAttribute(
+        "aria-pressed",
+        String(includeDpi)
+      );
+
+      toggle.classList.toggle(
+        "on",
+        includeDpi
+      );
+
+      showToast(
+        includeDpi
+          ? "DPI adjustment enabled"
+          : "DPI adjustment disabled"
+      );
+
+    }
+  );
+
+
+  /* =======================================================
+     MODEL VALIDATION
+  ======================================================= */
+
+  function validateModel(){
+
+    const value =
+      modelInput.value.trim();
+
+    if(!value){
+
+      modelInput.classList.add(
+        "invalid"
+      );
+
+      modelInput.focus();
+
+      showToast(
+        "Enter your device model first."
+      );
+
+      return false;
+
+    }
+
+    if(value.length < 2){
+
+      modelInput.classList.add(
+        "invalid"
+      );
+
+      modelInput.focus();
+
+      showToast(
+        "Device model is too short."
+      );
+
+      return false;
+
+    }
+
+    return true;
+
+  }
+
+
+  modelInput.addEventListener(
+    "input",
+    () => {
+
+      modelInput.classList.remove(
+        "invalid"
+      );
+
+    }
+  );
+
+
+  /* =======================================================
+     ENTER SUPPORT
+  ======================================================= */
+
+  modelInput.addEventListener(
+    "keydown",
+    event => {
+
+      if(event.key === "Enter"){
+
+        event.preventDefault();
+
+        generateSettings();
+
+      }
+
+    }
+  );
+
+
+  /* =======================================================
+     GENERATE — SEKARANG DENGAN ANIMASI PROSES
+  ======================================================= */
+
+  generateButton.addEventListener(
+    "click",
+    generateSettings
+  );
+
+
+  async function generateSettings(){
+
+    if(!validateModel()){
+      return;
+    }
+
+    const model =
+      modelInput.value.trim();
+
+
+    const oldResult =
+      document.querySelector(
+        ".sensi-result"
+      );
+
+
+    if(oldResult){
+      oldResult.remove();
+    }
+
+
+    generateButton.classList.add(
+      "loading"
+    );
+
+
+    showGeneratingOverlay();
+
+
+    await runGenerateAnimation();
+
+
+    const analysis =
+      analyzeDevice(
+        selectedBrand,
+        model
+      );
+
+
+    const values =
+      calculateSensitivity(
+        selectedBrand,
+        selectedStyle,
+        includeDpi,
+        analysis
+      );
+
+
+    const dpi =
+      getRecommendedDPI(
+        selectedBrand,
+        includeDpi,
+        analysis
+      );
+
+
+    createResult(
+      model,
+      values,
+      dpi,
+      analysis
+    );
+
+
+    generateButton.classList.remove(
+      "loading"
+    );
+
+
+    hideGeneratingOverlay();
+
+
+    showToast(
+      "Sensitivity profile generated."
+    );
+
+  }
+
+
+  /* =======================================================
+     GENERATING OVERLAY — CONTROL
+  ======================================================= */
+
+  function showGeneratingOverlay(){
+
+    generatingOverlay.classList.add(
+      "active"
+    );
+
+    progressFill.style.width =
+      "0%";
+
+    const stepElements =
+      genSteps.querySelectorAll(
+        ".gen-step"
+      );
+
+    stepElements.forEach(step => {
+
+      step.classList.remove(
+        "active",
+        "done"
+      );
+
+    });
+
+  }
+
+
+  function hideGeneratingOverlay(){
+
+    generatingOverlay.classList.remove(
+      "active"
+    );
+
+  }
+
+
+  function runGenerateAnimation(){
+
+    return new Promise(
+      (resolve) => {
+
+        const steps =
+          genSteps.querySelectorAll(
+            ".gen-step"
+          );
+
+        const total =
+          steps.length;
+
+        let current =
+          0;
+
+        function nextStep(){
+
+          if(current >= total){
+
+            setTimeout(
+              () => {
+                resolve();
+              },
+              350
+            );
+
+            return;
+
+          }
+
+          if(current > 0){
+
+            steps[
+              current - 1
+            ].classList.remove(
+              "active"
+            );
+
+            steps[
+              current - 1
+            ].classList.add(
+              "done"
+            );
+
+          }
+
+          steps[
+            current
+          ].classList.add(
+            "active"
+          );
+
+
+          const progress =
+            ((current + 1) / total) * 100;
+
+          progressFill.style.width =
+            `${progress}%`;
+
+
+          current++;
+
+
+          const delay =
+            450 + Math.random() * 300;
+
+          setTimeout(
+            nextStep,
+            delay
+          );
+
+        }
+
+
+        nextStep();
+
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     ANALYZE DEVICE — KLASIFIKASI & DETEKSI
+  ======================================================= */
+
+  function analyzeDevice(
+    brand,
+    model
+  ){
+
+    const brandProfile =
+      DEVICE_PROFILES[brand];
+
+    let deviceClass =
+      "mid";
+
+    let refreshRate =
+      brandProfile.defaultHz || 60;
+
+    let dpi =
+      brandProfile.dpi || 400;
+
+
+    for(
+      const [className, classData]
+      of Object.entries(DEVICE_CLASS)
+    ){
+
+      const matched =
+        classData.keywords.some(
+          keyword =>
+            model.toLowerCase().includes(
+              keyword.toLowerCase()
+            )
+        );
+
+      if(matched){
+
+        deviceClass =
+          className;
+
+        refreshRate =
+          classData.hz;
+
+        dpi =
+          classData.dpi;
+
+        break;
+
+      }
+
+    }
+
+
+    /*
+      Fallback cerdas:
+      Jika model mengandung angka tinggi,
+      naikkan kelasnya sedikit.
+    */
+
+    if(deviceClass === "mid"){
+
+      const numbers =
+        model.match(/\d+/g);
+
+      if(numbers){
+
+        const lastNumber =
+          parseInt(
+            numbers[
+              numbers.length - 1
+            ],
+            10
+          );
+
+        if(lastNumber >= 20){
+
+          deviceClass =
+            "high";
+
+          refreshRate =
+            120;
+
+          dpi =
+            440;
+
+        }else if(lastNumber <= 10){
+
+          deviceClass =
+            "low";
+
+          refreshRate =
+            60;
+
+          dpi =
+            360;
+
+        }
+
+      }
+
+    }
+
+
+    const touchResponse =
+      DEVICE_CLASS[
+        deviceClass
+      ]?.touchResponse ||
+      "Cukup responsif";
+
+
+    return {
+      class: deviceClass,
+      refreshRate,
+      dpi,
+      touchResponse,
+      model
+    };
+
+  }
+
+
+  /* =======================================================
+     CALCULATE SENSITIVITY — LEBIH PERSONAL
+  ======================================================= */
+
+  function calculateSensitivity(
+    brand,
+    style,
+    includeDpi,
+    analysis
+  ){
+
+    const base =
+      BASE_PROFILES[
+        style
+      ];
+
+
+    const device =
+      DEVICE_PROFILES[
+        brand
+      ];
+
+
+    const values = {};
+
+
+    const hzFactor =
+      analysis.refreshRate >= 144
+        ? 3
+        : analysis.refreshRate >= 120
+          ? 2
+          : analysis.refreshRate >= 90
+            ? 1
+            : 0;
+
+
+    const classFactor =
+      analysis.class === "flagship"
+        ? 4
+        : analysis.class === "high"
+          ? 2
+          : analysis.class === "mid"
+            ? 0
+            : -2;
+
+
+    Object.keys(base)
+      .forEach(key => {
+
+        let value =
+          base[key] +
+          (device[key] || 0);
+
+
+        /*
+          Adjust berdasarkan refresh rate:
+          layar lebih responsif -> naikkan sedikit
+        */
+
+        if(
+          key === "General"
+          || key === "Red Dot"
+        ){
+
+          value += hzFactor;
+
+        }
+
+
+        /*
+          Adjust berdasarkan kelas device:
+          perangkat lebih tinggi -> tuning lebih presisi
+        */
+
+        if(
+          key === "General"
+          || key === "2X Scope"
+        ){
+
+          value += classFactor;
+
+        }
+
+
+        /*
+          DPI toggle:
+          small adjustment only.
+        */
+
+        if(includeDpi){
+
+          if(
+            key === "General"
+          ){
+            value += 2;
+          }
+
+          if(
+            key === "Red Dot"
+          ){
+            value += 2;
+          }
+
+          if(
+            key === "2X Scope"
+          ){
+            value += 1;
+          }
+
+        }
+
+
+        values[key] =
+          clamp(
+            Math.round(value),
+            0,
+            200
+          );
+
+      });
+
+
+    return values;
+
+  }
+
+
+  /* =======================================================
+     DPI RECOMMENDATION
+  ======================================================= */
+
+  function getRecommendedDPI(
+    brand,
+    includeDpi,
+    analysis
+  ){
+
+    if(!includeDpi){
+      return "OFF";
+    }
+
+    if(brand === "Apple"){
+      return "N/A";
+    }
+
+    return analysis.dpi;
+
+  }
+
+
+  /* =======================================================
+     RESULT — TAMPILAN LEBIH KAYA & BERMANFAAT
+  ======================================================= */
+
+  function createResult(
+    model,
+    values,
+    dpi,
+    analysis
+  ){
+
+    const result =
+      document.createElement(
+        "div"
+      );
+
+
+    result.className =
+      "sensi-result";
+
+
+    const deviceClassLabel =
+      analysis.class.toUpperCase();
+
+    const refreshLabel =
+      `${analysis.refreshRate}Hz`;
+
+    const dragStyle =
+      analysis.class === "flagship"
+        || analysis.class === "high"
+        ? "Fast Drag"
+        : analysis.class === "low"
+          ? "Slow Drag"
+          : "Medium Drag";
+
+    const tips =
+      analysis.class === "low"
+        ? "Gunakan DPI lebih rendah dan aktifkan 'Aim Assist' untuk membantu tracking. Latih drag pendek di training ground."
+        : analysis.class === "mid"
+          ? "Setting ini seimbang. Fokus pada crosshair placement dan hindari over-drag. Naikkan General sedikit jika terasa lambat."
+          : "Device kamu mendukung respons cepat. Manfaatkan refresh rate tinggi dengan drag pendek dan presisi. Jangan lupa matikan 'Auto Rotation' agar stabil."
+
+
+    result.innerHTML =
+      `
+
+      <div class="result-header">
+
+        <div>
+
+          <h3>
+            ${escapeHTML(model)}
+          </h3>
+
+          <p>
+            ${escapeHTML(selectedBrand)}
+            ·
+            ${escapeHTML(selectedStyle)}
+            ·
+            0–200 PROFILE
+          </p>
+
+        </div>
+
+        <span class="result-status">
+          ● READY
+        </span>
+
+      </div>
+
+
+      <div class="sensi-grid">
+
+        ${createValueCard(
+          "General",
+          values["General"]
+        )}
+
+        ${createValueCard(
+          "Red Dot",
+          values["Red Dot"]
+        )}
+
+        ${createValueCard(
+          "2X Scope",
+          values["2X Scope"]
+        )}
+
+        ${createValueCard(
+          "4X Scope",
+          values["4X Scope"]
+        )}
+
+        ${createValueCard(
+          "Sniper Scope",
+          values["Sniper Scope"]
+        )}
+
+        ${createValueCard(
+          "Free Look",
+          values["Free Look"]
+        )}
+
+      </div>
+
+
+      <div class="result-meta">
+
+        <div class="meta-box">
+
+          <span>
+            DEVICE CLASS
+          </span>
+
+          <strong>
+            ${deviceClassLabel}
+          </strong>
+
+        </div>
+
+
+        <div class="meta-box">
+
+          <span>
+            REFRESH RATE
+          </span>
+
+          <strong>
+            ${refreshLabel}
+          </strong>
+
+        </div>
+
+
+        <div class="meta-box">
+
+          <span>
+            DPI
+          </span>
+
+          <strong>
+            ${escapeHTML(
+              String(dpi)
+            )}
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="result-extras">
+
+        <div class="extra-box">
+
+          <div class="extra-title">
+            TOUCH RESPONSE
+          </div>
+
+          <p>
+            ${escapeHTML(
+              analysis.touchResponse
+            )}
+          </p>
+
+        </div>
+
+        <div class="extra-box">
+
+          <div class="extra-title">
+            DRAG STYLE
+          </div>
+
+          <p>
+            ${dragStyle}
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="result-tips">
+
+        <div class="tip-title">
+          TIPS UNTUKMU
+        </div>
+
+        <p>
+          ${tips}
+        </p>
+
+      </div>
+
+
+      <div class="result-actions">
+
+        <button
+          type="button"
+          data-copy
+        >
+          COPY SETTINGS
+        </button>
+
+        <button
+          type="button"
+          data-reset
+        >
+          GENERATE AGAIN
+        </button>
+
+      </div>
+
+      `;
+
+
+    generator.appendChild(
+      result
+    );
+
+
+    const copyButton =
+      result.querySelector(
+        "[data-copy]"
+      );
+
+
+    const resetButton =
+      result.querySelector(
+        "[data-reset]"
+      );
+
+
+    copyButton.addEventListener(
+      "click",
+      () => {
+
+        const text =
+          buildCopyText(
+            model,
+            values,
+            dpi,
+            analysis
+          );
+
+        copyText(text);
+
+      }
+    );
+
+
+    resetButton.addEventListener(
+      "click",
+      () => {
+
+        generateSettings();
+
+      }
+    );
+
+
+    setTimeout(
+      () => {
+
+        result.scrollIntoView({
+          behavior:"smooth",
+          block:"center"
+        });
+
+      },
+      100
+    );
+
+  }
+
+
+  /* =======================================================
+     VALUE CARD
+  ======================================================= */
+
+  function createValueCard(
+    label,
+    value
+  ){
+
+    const level =
+      Math.max(
+        5,
+        Math.min(
+          100,
+          value / 2
+        )
+      );
+
+
+    return `
+
+      <div
+        class="sensi-value"
+        style="--level:${level}%"
+      >
+
+        <small>
+          ${escapeHTML(label)}
+        </small>
+
+        <strong>
+          ${value}
+        </strong>
+
+      </div>
+
+    `;
+
+  }
+
+
+  /* =======================================================
+     COPY FORMAT — LEBIH LENGKAP
+  ======================================================= */
+
+  function buildCopyText(
+    model,
+    values,
+    dpi,
+    analysis
+  ){
+
+    const deviceClass =
+      analysis.class.toUpperCase();
+
+    return `𝗥𝗶𝗲𝗹 𝗦𝗲𝗻𝘀𝗶 𝗫
+━━━━━━━━━━━━━━━━
+
+DEVICE
+${model}
+
+BRAND
+${selectedBrand}
+
+STYLE
+${selectedStyle}
+
+DEVICE CLASS
+${deviceClass}
+
+REFRESH RATE
+${analysis.refreshRate}Hz
+
+TOUCH RESPONSE
+${analysis.touchResponse}
+
+SENSITIVITY 0–200
+
+General       ${values["General"]}
+Red Dot       ${values["Red Dot"]}
+2X Scope      ${values["2X Scope"]}
+4X Scope      ${values["4X Scope"]}
+Sniper Scope  ${values["Sniper Scope"]}
+Free Look     ${values["Free Look"]}
+
+DPI
+${dpi}
+
+DRAG STYLE
+${analysis.class === "flagship" || analysis.class === "high" ? "Fast Drag" : analysis.class === "low" ? "Slow Drag" : "Medium Drag"}
+
+Generated by 𝗥𝗶𝗲𝗹 𝗦𝗲𝗻𝘀𝗶 𝗫`;
+
+  }
+
+
+  /* =======================================================
+     CLIPBOARD
+  ======================================================= */
+
+  function copyText(text){
+
+    if(
+      navigator.clipboard &&
+      window.isSecureContext
+    ){
+
+      navigator.clipboard
+        .writeText(text)
+        .then(
+          () => {
+
+            showToast(
+              "Settings copied to clipboard."
+            );
+
+          }
+        )
+        .catch(
+          () => fallbackCopy(text)
+        );
+
+      return;
+
+    }
+
+
+    fallbackCopy(text);
+
+  }
+
+
+  function fallbackCopy(text){
+
+    const textarea =
+      document.createElement(
+        "textarea"
+      );
+
+    textarea.value =
+      text;
+
+    textarea.style.position =
+      "fixed";
+
+    textarea.style.left =
+      "-9999px";
+
+    document.body.appendChild(
+      textarea
+    );
+
+    textarea.select();
+
+    try{
+
+      document.execCommand(
+        "copy"
+      );
+
+      showToast(
+        "Settings copied to clipboard."
+      );
+
+    }catch(error){
+
+      showToast(
+        "Copy failed. Please copy manually."
+      );
+
+    }
+
+    textarea.remove();
+
+  }
+
+
+  /* =======================================================
+     TOAST
+  ======================================================= */
+
+  let toastTimer;
+
+
+  function showToast(message){
+
+    let toast =
+      document.querySelector(
+        ".toast"
+      );
+
+
+    if(!toast){
+
+      toast =
+        document.createElement(
+          "div"
+        );
+
+      toast.className =
+        "toast";
+
+      document.body.appendChild(
+        toast
+      );
+
+    }
+
+
+    toast.textContent =
+      message;
+
+
+    toast.classList.add(
+      "show"
+    );
+
+
+    clearTimeout(
+      toastTimer
+    );
+
+
+    toastTimer =
+      setTimeout(
+        () => {
+
+          toast.classList.remove(
+            "show"
+          );
+
+        },
+        2200
+      );
+
+  }
+
+
+  /* =======================================================
+     ESCAPE HTML
+  ======================================================= */
+
+  function escapeHTML(value){
+
+    return String(value)
+      .replace(
+        /&/g,
+        "&amp;"
+      )
+      .replace(
+        /</g,
+        "&lt;"
+      )
+      .replace(
+        />/g,
+        "&gt;"
+      )
+      .replace(
+        /"/g,
+        "&quot;"
+      )
+      .replace(
+        /'/g,
+        "&#039;"
+      );
+
+  }
+
+
+  /* =======================================================
+     CLAMP
+  ======================================================= */
+
+  function clamp(
+    value,
+    min,
+    max
+  ){
+
+    return Math.max(
+      min,
+      Math.min(
+        max,
+        value
+      )
+    );
+
+  }
+
+
+  /* =======================================================
+     SCROLL REVEAL
+  ======================================================= */
+
+  const revealElements =
+    document.querySelectorAll(
+      ".reveal"
+    );
+
+
+  if(
+    "IntersectionObserver"
+    in window
+  ){
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(
+            entry => {
+
+              if(
+                entry.isIntersecting
+              ){
+
+                entry.target.classList.add(
+                  "visible"
+                );
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold:.08
+        }
+      );
+
+
+    revealElements.forEach(
+      element => {
+
+        observer.observe(
+          element
+        );
+
+      }
+    );
+
+  }else{
+
+    revealElements.forEach(
+      element => {
+
+        element.classList.add(
+          "visible"
+        );
+
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     IMAGE FALLBACK
+  ======================================================= */
+
+  document
+    .querySelectorAll("img")
+    .forEach(
+      image => {
+
+        image.addEventListener(
+          "error",
+          () => {
+
+            image.style.display =
+              "none";
+
+          }
+        );
+
+      }
+    );
+
+
+  /* =======================================================
+     INITIAL STATE
+  ======================================================= */
+
+  brandButtons.forEach(
+    button => {
+
+      button.setAttribute(
+        "aria-pressed",
+        button.classList.contains(
+          "selected"
+        )
+      );
+
+    }
+  );
+
+
+})();
+
+</script>
+
+</body>
+</html>
